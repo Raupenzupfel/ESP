@@ -6,6 +6,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import os
+
+os.chdir('C:/Users/tadeu/Documents/0 Studium/Master/1. Semester/ESP-PÜ/Git/Laufradspeicher/python')
 
 ## Variablen
 Data = "./RawData/20241120_Auslaufzeit.csv"         # relativer Path zur .csv Datei
@@ -84,4 +87,5 @@ ax.legend()
 plt.show()
 
 ## Output
-fig.savefig('Auslaufkurven.png', bbox_inches = 'tight', dpi= 500)
+fig.savefig('Auslaufkurven.svg', bbox_inches = 'tight')
+fig.savefig('Auslaufkurven.png', bbox_inches = 'tight', dpi=500)
