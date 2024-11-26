@@ -53,19 +53,19 @@ for i in new_step.astype(int)-1:
 ## Plotten
 fig, ax = plt.subplots()
 ax2 = ax.twinx()
-ax3 = ax.twinx()
+# ax3 = ax.twinx()
 
-fig.subplots_adjust(left=0.001)
+# fig.subplots_adjust(left=0.001)
 
-ax3.yaxis.set_ticks_position('left')
-ax3.yaxis.set_label_position('left')
-ax3.spines['left'].set_position(('axes', -0.12))
+# ax3.yaxis.set_ticks_position('left')
+# ax3.yaxis.set_label_position('left')
+# ax3.spines['left'].set_position(('axes', -0.12))
 
 ax.set_xlabel('Zeit in s')
 ax.set_ylabel('Spannung in V')
 ax.set_title('Anlaufkurven')
 ax2.set_ylabel('Drehzahl in rpm')
-ax3.set_ylabel('Strom in A')
+# ax3.set_ylabel('Strom in A')
 ax.grid(True, which='both', axis='both', alpha = .5)
 
 ax.plot(neu_Time_U1, neu_U1, label='Spannung 1', c='darkgreen')
@@ -82,7 +82,7 @@ ax2.set_ylim([0,max(neu_n1)*1.05])
 
 print(max(I_1['CH1']), max(I_2['CH1']))
 
-fig.legend(bbox_to_anchor=(0.68, 0.5), loc='upper left', borderaxespad=0)
+fig.legend(bbox_to_anchor=(0.68, 0.31), loc='upper left', borderaxespad=0)
 
 plt.show()
 
