@@ -22,12 +22,12 @@ ax.xaxis.set_minor_locator(MultipleLocator(0.5))
 ax.grid()
 
 
-ax.plot(Ladung['t_m'],Ladung['p'], c = 'darkgreen', label='Druck')
-ax2.plot(Ladung['t_m'],Ladung['T'], c='dodgerblue', label='Temperatur')
+ax.plot(Ladung['t_m'],Ladung['p'], c = '#76B900', label='Druck')
+ax2.plot(Ladung['t_m'],Ladung['T'], c='#0082D1', label='Temperatur')
 
-ax.axvline(5, c='orange')
-ax.axvline(13, c='orange')
-ax.axvline(21.5, c='orange')
+ax.axvline(5, c='#FF5F00')
+ax.axvline(13, c='#FF5F00')
+ax.axvline(21.5, c='#FF5F00')
 
 ax.text(0.5, 20, r'$\dot{V}=5\frac{Nl}{min}$')
 ax.text(7, 20, r'$\dot{V}=15\frac{Nl}{min}$')
