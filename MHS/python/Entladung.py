@@ -8,10 +8,13 @@ from matplotlib.ticker import (MultipleLocator)
 
 ## Import
 Entladung = pd.read_excel("C:/Users/tadeu/Documents/0 Studium/Master/1. Semester/ESP-PÜ/Git/MHS/python/RawData/geasamt.xlsx", usecols='A:F',sheet_name='Entladung')
+V1 = pd.read_excel("C:/Users/tadeu/Documents/0 Studium/Master/1. Semester/ESP-PÜ/Git/MHS/python/RawData/geasamt.xlsx", usecols='H:I',sheet_name='Entladung')
+V2 = pd.read_excel("C:/Users/tadeu/Documents/0 Studium/Master/1. Semester/ESP-PÜ/Git/MHS/python/RawData/geasamt.xlsx", usecols='J:K',sheet_name='Entladung')
+V3 = pd.read_excel("C:/Users/tadeu/Documents/0 Studium/Master/1. Semester/ESP-PÜ/Git/MHS/python/RawData/geasamt.xlsx", usecols='L:M',sheet_name='Entladung')
+V4 = pd.read_excel("C:/Users/tadeu/Documents/0 Studium/Master/1. Semester/ESP-PÜ/Git/MHS/python/RawData/geasamt.xlsx", usecols='N:O',sheet_name='Entladung')
 
 Speicher_Leer = 6.489
-Masse = Entladung[Entladung['m'].notnull()]
-print(Masse)
+# Masse = Entladung[Entladung['m'].notnull()]
 
 ## Plotten
 fig, ax = plt.subplots()
@@ -36,8 +39,13 @@ ax.grid()
 
 ax.plot(Entladung['t_m'],Entladung['p'], c = '#76B900', label='Druck')
 ax2.plot(Entladung['t_m'],Entladung['T'], c='#0082D1', label='Temperatur')
-ax3.plot(Entladung['t_m'],Entladung['V'], c='#FF5F00', label='Volumenstrom')
-ax4.scatter(Masse['t_m'], Masse['m'], c='Black', label=r'$H_2$ Masse')
+
+ax3.plot(V1['t_m.1'],V1['V.1'], c='#FF5F00', label='Volumenstrom')
+ax3.plot(V2['t_m.2'],V2['V.2'], c='#FF5F00')
+ax3.plot(V3['t_m.3'],V3['V.3'], c='#FF5F00')
+ax3.plot(V4['t_m.4'],V4['V.4'], c='#FF5F00')
+
+ax4.scatter(Entladung['t_m'], Entladung['m'], c='Black', label=r'$H_2$ Masse')
 
 ax.axvline(0, c='Black', ls=':')
 ax.axvline(5.5, c='Black', ls=':')
